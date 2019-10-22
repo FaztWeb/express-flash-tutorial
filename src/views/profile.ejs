@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile</title>
+    <%- include _header.ejs %>
+</head>
+
+<body>
+
+    <div class="container p-4">
+        <% if (messages.length > 0) {%>
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <p class="alert alert-success"><%= messages %></p>
+            </div>
+        </div>
+        <% } %>
+
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="card card-body">
+
+                    <h1>My Profile</h1>
+                    <% if (user) { %>
+                    <p>
+                        Username: <%= user.email %>
+                    </p>
+                    <p>
+                        Password: <%= user.password %>
+                    </p>
+                    <% }%>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
